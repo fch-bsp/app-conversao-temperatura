@@ -1,0 +1,3 @@
+node_modules/
+
+# Quando começar fazer o copi ele ignora pasta "node_modules"
