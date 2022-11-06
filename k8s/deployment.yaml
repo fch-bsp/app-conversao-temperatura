@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-conversao-temperatura
+  namespace: app-conversao-temperatura
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app-conversao-temperatura
+  template:
+    metadata:
+      labels:
+        app: app-conversao-temperatura
+    spec:
+      containers:
+      - name: app-conversao-temperatura
+        image: nandocloud/app-conversao-temperatura:latest
+        ports:
+        - containerPort: 8080
