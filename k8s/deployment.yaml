@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: app-conversao-temperatura
+      namespace: app-conversao-temperatura
   template:
     metadata:
       labels:
