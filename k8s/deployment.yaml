@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: app-conversao-temperatura
-        image: nandocloud/app-conversao-temperatura:1.0
+        image: nandocloud/app-conversao-temperatura:latest
         ports:
         - containerPort: 8080

@@ -1,4 +1,4 @@
-FROM node
+FROM node:14.17.5
 
 WORKDIR /app
 
@@ -23,7 +23,7 @@ CMD ["node", "server.js"]
 
 # docker push nandocloud/app-conversao-temperatura:latest
 
-# docker tag nandocloud/app-conversao-temperatura:latest nandocloud/app-conversao-temperatura:1.0
+# docker tag nandocloud/app-conversao-temperatura:latest nandocloud/app-conversao-temperatura:2.0
 
 # sudo netstat -tlpn | grep 8080
 
