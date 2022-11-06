@@ -1,0 +1,64 @@
+k3d cluster create --servers 1 --agents 2
+
+2. kubectl create namespace argocd
+
+3. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+4. kubectl get all -n argocd
+
+
+6. kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+
+
+----------Acesso na aplicação------------
+
+kubectl port-forward  service/argocd-server 8081:443 -n argocd
+http://localhost:8081/
+
+
+
+kubectl port-forward  svc/webcolor -n webcolor 9090:80
+
+http://localhost:9191/
+
+
+
+
+
+-----    libera porta ----------------------------
+
+sudo netstat -tlpn
+sudo kill -9 $(lsof -t -i:8080)
+---------------------
+
+dicas:
+# Lista todos os processos que estão rodando
+sudo netstat -tlpn
+
+# Lista todos os processos que estão rodando na porta 8080
+
+
+==================================================================================================================================
+comando criação cli 
+
+argocd app create app-webcolor1 \
+--project default \
+--repo https://github.com/fch-bsp/k8s-web-color-page.git \
+--path k8s \
+--sync-policy auto \
+--dest-namespace webcolor1 \
+--dest-server https://kubernetes.default.svc
+
+
+comando para deleta app 
+
+argocd app delete app-webcolor1
+
+sudo netstat -tlpn | grep 8080
+
+# Mata processo que está rodando na porta 8080
+sudo kill -9 `sudo lsof -t -i:8080`
+sudo kill -9 $(lsof -t -i:8081)
+
+
