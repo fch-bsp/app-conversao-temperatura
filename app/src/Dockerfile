@@ -19,9 +19,11 @@ CMD ["node", "server.js"]
 
 # docker image build -t nandocloud/app-conversao-temperatura .
 
-# docker container run -d -p 8080:8080 nandocloud/app-conversao-temperatura 
+# docker container run -d -p 8080:8080 nandocloud/app-conversao-temperatura:1.0
 
 # docker push nandocloud/app-conversao-temperatura:latest
+
+# docker tag nandocloud/app-conversao-temperatura:latest nandocloud/app-conversao-temperatura:1.0
 
 # sudo netstat -tlpn | grep 8080
 
