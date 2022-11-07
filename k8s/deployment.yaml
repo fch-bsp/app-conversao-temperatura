@@ -4,7 +4,7 @@ metadata:
   name: app-conversao-temperatura
   namespace: app-conversao-temperatura
 spec:
-  replicas: 5
+  replicas: 10
   selector:
     matchLabels:
       app: app-conversao-temperatura
